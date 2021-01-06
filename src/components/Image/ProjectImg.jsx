@@ -12,7 +12,7 @@ const ProjectImg = ({ filename, alt }) => (
             node {
               relativePath
               name
-              childImageSharp {
+              publicURL {
                 fluid(maxWidth: 1366) {
                   ...GatsbyImageSharpFluid
                 }
@@ -27,7 +27,7 @@ const ProjectImg = ({ filename, alt }) => (
 
       if (!image) return null;
 
-      const imageFluid = image.node.childImageSharp.fluid;
+      const imageFluid = image.node.publicURL.fluid;
       return <Img alt={alt} fluid={imageFluid} />;
     }}
   />
