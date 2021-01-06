@@ -12,7 +12,7 @@ const AboutImg = ({ filename, alt }) => (
             node {
               relativePath
               name
-              publicURL {
+              childImageSharp {
                 fixed(width: 350) {
                   ...GatsbyImageSharpFixed
                 }
@@ -27,7 +27,7 @@ const AboutImg = ({ filename, alt }) => (
 
       if (!image) return null;
 
-      const imageFixed = image.node.publicURL.fixed;
+      const imageFixed = image.node.childImageSharp.fixed;
       return <Img className="rounded shadow-lg" alt={alt} fixed={imageFixed} />;
     }}
   />
